@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import classes from "./PostsList.module.css";
 import Post from "./Post";
 import AddPost from "./AddPost";
+import Model from "./Modal";
 
 function PostsList() {
   const [nameChange, setNameChange] = useState("");
@@ -16,10 +16,12 @@ function PostsList() {
   }
   return (
     <>
-      <AddPost
-        onNameChange={changeNameHandler}
-        onLocationChange={changeLocationHandler}
-      />
+      <Model>
+        <AddPost
+          onNameChange={changeNameHandler}
+          onLocationChange={changeLocationHandler}
+        />
+      </Model>
       <ul className={classes.posts}>
         <Post name={nameChange} location={locationChange} />
         <Post name={"Max"} location={"New York"} />
