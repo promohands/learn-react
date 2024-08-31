@@ -1,15 +1,16 @@
+/* eslint-disable react/prop-types */
 import classes from "./AddPost.module.css";
 
-function AddPost() {
+function AddPost({ onNameChange, onLocationChange }) {
   return (
     <form className={classes.form}>
       <p>
         <label htmlFor="name">Name</label>
-        <input type="text" id="name" required />
+        <input type="text" id="name" required onChange={onNameChange} />
       </p>
       <p>
         <label htmlFor="location">Location</label>
-        <input type="text" id="location" required />
+        <input type="text" id="location" required onChange={onLocationChange} />
       </p>
     </form>
   );
