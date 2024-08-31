@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import classes from "./AddPost.module.css";
 
 function AddPost({ onNameChange, onLocationChange }) {

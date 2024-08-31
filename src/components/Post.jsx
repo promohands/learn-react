@@ -1,6 +1,5 @@
 import classes from "./Post.module.css";
 
-// eslint-disable-next-line react/prop-types
 function Post({ name, location }) {
   return (
     <li className={classes.post}>

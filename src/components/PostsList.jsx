@@ -4,14 +4,9 @@ import Post from "./Post";
 import AddPost from "./AddPost";
 import Model from "./Modal";
 
-function PostsList() {
-  const [modalIsOpen, setModalIsOpen] = useState(true);
+function PostsList({ isPosting, onStopPosting }) {
   const [nameChange, setNameChange] = useState("");
   const [locationChange, setLocationChange] = useState("");
-
-  function closeModalHandler() {
-    setModalIsOpen(false);
-  }
 
   function changeNameHandler(event) {
     setNameChange(event.target.value);
@@ -21,8 +16,8 @@ function PostsList() {
   }
   return (
     <>
-      {modalIsOpen && (
-        <Model onClose={closeModalHandler}>
+      {isPosting && (
+        <Model onClose={onStopPosting}>
           <AddPost
             onNameChange={changeNameHandler}
             onLocationChange={changeLocationHandler}
