@@ -21,6 +21,7 @@ function PostsList({ isPosting, onStopPosting }) {
           <AddPost
             onNameChange={changeNameHandler}
             onLocationChange={changeLocationHandler}
+            onCancel={onStopPosting}
           />
         </Model>
       )}

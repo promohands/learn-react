@@ -1,6 +1,6 @@
 import classes from "./AddPost.module.css";
 
-function AddPost({ onNameChange, onLocationChange }) {
+function AddPost({ onNameChange, onLocationChange, onCancel }) {
   return (
     <form className={classes.form}>
       <p>
@@ -10,6 +10,12 @@ function AddPost({ onNameChange, onLocationChange }) {
       <p>
         <label htmlFor="location">Location</label>
         <input type="text" id="location" required onChange={onLocationChange} />
+      </p>
+      <p className={classes.actions}>
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
+        <button type="submit">Add Post</button>
       </p>
     </form>
   );
