@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./AddPost.module.css";
 
-function AddPost({ onCancel }) {
+function AddPost({ onCancel, onAddPost }) {
   const [nameEntered, setNameEntered] = useState("");
   const [locationEntered, setLocationEntered] = useState("");
 
@@ -15,7 +15,7 @@ function AddPost({ onCancel }) {
   function submitHandler(event) {
     event.preventDefault();
     const postData = { name: nameEntered, location: locationEntered };
-    console.log(postData);
+    onAddPost(postData);
     onCancel();
   }
 
